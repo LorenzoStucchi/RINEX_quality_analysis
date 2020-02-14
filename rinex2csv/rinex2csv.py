@@ -13,3 +13,10 @@ df_1.to_csv("data/RINEXON.csv")
 file = open("data/RINEXON_header.txt","w")
 file.write(head_1)
 file.close()
+
+(df_2, head_2) = readObs("data/GEOP.20o")
+df_2.to_csv("data/GEOP.csv")
+
+file2 = open("data/GEOP_header.txt","w")
+file2.write(head_2)
+file2.close()
