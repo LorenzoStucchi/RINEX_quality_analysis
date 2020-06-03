@@ -28,6 +28,7 @@ def readObs(file):
                     second = line[19:29]
                     satNum = line[32:35]
                     index = datetime(int(year),int(months),int(day), int(hour),int(minute),int(float(second)))
+                    dec_sec = "0." + second[3:]
                     for j in range(1,int(satNum)):
                         satData = hnd.readline()
                         satId = satData[0:3]
@@ -144,7 +145,7 @@ def readObs(file):
                             lli_snr_3 = ' '
                             ssi_snr_3 = ' '
                             
-                        a = [index,second[3:],epoch_flag,clock_offset,satId,psr_1,lli_psr_1,ssi_psr_1,phs_1,lli_phs_1,ssi_phs_1,dop_1,lli_dop_1,ssi_dop_1,snr_1,lli_snr_1,ssi_snr_1,psr_2,lli_psr_2,ssi_psr_2,phs_2,lli_phs_2,ssi_phs_2,dop_2,lli_dop_2,ssi_dop_2,snr_2,lli_snr_2,ssi_snr_2,psr_3,lli_psr_3,ssi_psr_3,phs_3,lli_phs_3,ssi_phs_3,dop_3,lli_dop_3,ssi_dop_3,snr_3,lli_snr_3,ssi_snr_3]
+                        a = [index,dec_sec,epoch_flag,clock_offset,satId,psr_1,lli_psr_1,ssi_psr_1,phs_1,lli_phs_1,ssi_phs_1,dop_1,lli_dop_1,ssi_dop_1,snr_1,lli_snr_1,ssi_snr_1,psr_2,lli_psr_2,ssi_psr_2,phs_2,lli_phs_2,ssi_phs_2,dop_2,lli_dop_2,ssi_dop_2,snr_2,lli_snr_2,ssi_snr_2,psr_3,lli_psr_3,ssi_psr_3,phs_3,lli_phs_3,ssi_phs_3,dop_3,lli_dop_3,ssi_dop_3,snr_3,lli_snr_3,ssi_snr_3]
                         dff = pd.DataFrame([a],columns=['GPST','dec_sec','epoch_flag','clock_offset','satId','psr_1','lli_psr_1','ssi_psr_1','phs_1','lli_phs_1','ssi_phs_1','dop_1','lli_dop_1','ssi_dop_1','snr_1','lli_snr_1','ssi_snr_1','psr_2','lli_psr_2','ssi_psr_2','phs_2','lli_phs_2','ssi_phs_2','dop_2','lli_dop_2','ssi_dop_2','snr_2','lli_snr_2','ssi_snr_2','psr_3','lli_psr_3','ssi_psr_3','phs_3','lli_phs_3','ssi_phs_3','dop_3','lli_dop_3','ssi_dop_3','snr_3','lli_snr_3','ssi_snr_3'])
                         df = df.append(dff)
     return df, header

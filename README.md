@@ -3,7 +3,7 @@ Collection of instruments to analyse with Python a RINEX 3.03, using Pandas.
 
 ## Requirements
 Required libraries:
- - Pandas 0.25.3
+ - Pandas 1.0.4
  
 The script are tested with the RINEX 3.03 file producted by Xiaomi Mi 8 with [Geo++](http://www.geopp.de/) and [RINEXON](https://www.flamingognss.com/rinexon).
 
