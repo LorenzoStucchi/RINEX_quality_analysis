@@ -2,9 +2,6 @@
 Collection of instruments to analyse with Python a RINEX 3.03, using Pandas.
 
 ## Requirements
-Required libraries:
- - Pandas 1.0.4
-
 Could be installed using:
 
 ```
